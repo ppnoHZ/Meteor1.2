@@ -6,7 +6,9 @@
     如果不使用Meteor自带的可以通过 
     
     
-    selector可以包含多个字段的信息。
+    selector如果是字符串，字符串中包含@符号就是按照email登陆，否则就是username登陆。
+    可以传对象但是必须是 {username:1111},{email:W@123.com}。不能包含其他字段，否则将
+    会报错。
     Meteor.loginWithPassword = function (selector, password, callback) {
         
     }

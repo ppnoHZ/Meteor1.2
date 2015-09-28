@@ -12,23 +12,14 @@ if (Meteor.isClient) {
         'click button': function () {
             // increment the counter when button is clicked
             Session.set('counter', Session.get('counter') + 1);
+            console.log('2');
             if (Meteor.isCordova) {
-                console.log(JSON.stringify(cordova.plugins.Wechat));
-                cordova.plugins.Wechat.isInstalled(function (installed) {
-
-                    alert("Wechat installed: " + (installed ? "Yes" : "No"));
-                    if (installed) {
-
-                        cordova.plugins.Wechat.share('文本', cordova.plugins.Wechat.Scene.TIMELINE, function () {
-                            alert('分享成功~');
-                        }, function (reason) {
-                            alert(reason);
-                        });
-                    }
+                console.log('2');
+                WeChat.share('文本', WeChat.Scene.session, function () {
+                    console.log('分享成功~');
                 }, function (reason) {
-                    alert("Failed: " + reason);
+                    console.log(reason);
                 });
-
             }
         }
     });

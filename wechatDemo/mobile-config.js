@@ -15,9 +15,9 @@ App.info({
     email: 'contact@example.com',
     website: '192.168.3.104:3000'
 });
-/*App.configurePlugin('com.wordsbaking.cordova.wechat', {
+App.configurePlugin('com.wordsbaking.cordova.wechat', {
     APP_ID: 'wxcfc03beb13d14be5'
-});*/
+});
 
 
-App.setPreference('wechatappid', 'wxcfc03beb13d14be5');
+//App.setPreference('wechatappid', 'wxcfc03beb13d14be5');

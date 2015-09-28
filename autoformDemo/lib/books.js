@@ -4,6 +4,7 @@
  * email:zhoudd@stark.tm
  */
 
+/*
 Books = new Mongo.Collection("books");
 Books.attachSchema(new SimpleSchema({
     title: {
@@ -31,4 +32,4 @@ Books.attachSchema(new SimpleSchema({
         optional: true,
         max: 1000
     }
-}));
+}));*/

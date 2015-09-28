@@ -4,10 +4,19 @@
  * email:zhoudd@stark.tm
  */
 Router.route('/', function () {
-    this.render('insertBookForm', {
-    });
+    this.render('insertBookForm', {});
 });
 Router.route('/update', function () {
+    var book = Books.findOne({_id: 'gerDYd5B2fp4CXs9k'});
     this.render('updateBookForm', {
+        data: book
     });
 });
+
+Router.route('/method', function () {
+    var book = Books.findOne({_id: 'gerDYd5B2fp4CXs9k'});
+    this.render('quickForMethod', {
+        data: book
+    });
+});
+

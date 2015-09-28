@@ -10,7 +10,7 @@ if (Meteor.isClient) {
 
     Template.hello.events({
         'click button': function () {
-           alert(Meteor.settings.public.name);
+            alert(Meteor.settings.public.name);
             //退出登陆。
             Meteor.logout(function (error) {
                 if (error)
@@ -27,7 +27,8 @@ if (Meteor.isClient) {
  * @param myParam1
  * @param myParam2
  */
-function loadDocs(myParam1, myParam2){}
+function loadDocs(myParam1, myParam2) {
+}
 
 if (Meteor.isServer) {
     Meteor.startup(function () {

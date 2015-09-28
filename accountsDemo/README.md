@@ -12,3 +12,9 @@
     Meteor.loginWithPassword = function (selector, password, callback) {
         
     }
+    
+## Settings 配置文件
+    可以使用*.json的文件，在启动的时候使用 --settings [filename] 来设置配置文件。
+    配置文件中的内容以JSON的格式，包含引号。
+    public 属性下的内容可以在客户端和服务端都可以访问。
+    其他属性，只能在服务端里访问。

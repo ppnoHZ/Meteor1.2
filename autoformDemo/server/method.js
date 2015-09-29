@@ -5,8 +5,9 @@
  */
 
 Meteor.methods({
-    quickMethod: function (doc) {
-        console.log(JSON.stringify(doc));
-        check(doc,Schemas.Books);
+    quickMethod: function () {
+        console.log('method call with arguments',arguments);
+        //console.log(JSON.stringify(doc));
+        //check(doc,Schemas.Books);
     }
 })

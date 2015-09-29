@@ -3,6 +3,11 @@
  * Author:zhoudd
  * email:zhoudd@stark.tm
  */
+Router.configure({
+    layoutTemplate:'layout'
+});
+Router.route('/home', {name:'home'});
+
 Router.route('/', function () {
     this.render('insertBookForm', {});
 });

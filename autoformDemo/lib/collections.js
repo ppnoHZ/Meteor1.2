@@ -7,3 +7,5 @@
 Books = new Mongo.Collection("books");
 
 Books.attachSchema(Schemas.Books);
+
+//Meteor.users.attachSchema(Schemas.User);

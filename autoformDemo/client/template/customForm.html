@@ -1,0 +1,16 @@
+<template name="customForm">
+    <h2>自定义form</h2>
+
+    {{#autoForm collection="Books" id="insertBookForm1" type="insert" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9"}}
+        <fieldset>
+            <legend>Add a Book</legend>
+            {{> afQuickField name='title'}}
+            {{> afQuickField name='author'}}
+            {{> afQuickField name='summary' rows=6}}
+            {{> afQuickField name='copies'}}
+            {{> afQuickField name='lastCheckedOut'}}
+            <!--{{> afQuickField name='summary'}}-->
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Insert</button>
+    {{/autoForm}}
+</template>

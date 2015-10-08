@@ -12,15 +12,22 @@ Router.route('/', function () {
     this.render('insertBookForm', {});
 });
 Router.route('/update', function () {
-    var book = Books.findOne({_id: 'gerDYd5B2fp4CXs9k'});
+    var book = Books.findOne();
     this.render('updateBookForm', {
         data: book
     });
 });
 
 Router.route('/method', function () {
-    var book = Books.findOne({_id: 'gerDYd5B2fp4CXs9k'});
+    var book = Books.findOne();
     this.render('quickForMethod', {
+        data: book
+    });
+});
+
+Router.route('/custom', function () {
+    var book = Books.findOne();
+    this.render('customForm', {
         data: book
     });
 });

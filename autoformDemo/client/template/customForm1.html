@@ -1,0 +1,38 @@
+<!--
+afQuickField 快速生产输入框的helper
+
+afFieldIsInvalid  判断当前输入是否不合法
+
+afFieldInput   输入框
+
+afFieldMessage  当验证失败的时候，出现的错误提示。对应schema中的
+-->
+
+
+<template name="customForm1">
+    <h2>自定义form</h2>
+
+    {{#autoForm collection="Books" id="insertBookForm" type="insert"}}
+        <fieldset>
+            <legend>Add a Book</legend>
+            {{> afQuickField name='title'}}
+            {{> afQuickField name='author'}}
+            {{> afQuickField name='summary' rows=6}}
+            {{> afQuickField name='copies'}}
+            {{> afQuickField name='lastCheckedOut'}}
+
+            <!--自定义显示字段-->
+            <div class="form-group{{#if afFieldIsInvalid name='title'}} has-error{{/if}}">
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    {{> afFieldInput type='textarea' name='title'}}
+                    <span class="input-group-addon">/each</span>
+                </div>
+                {{#if afFieldIsInvalid name='title'}}
+                    <span class="help-block">{{afFieldMessage name='title'}}</span>
+                {{/if}}
+            </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Insert</button>
+    {{/autoForm}}
+</template>

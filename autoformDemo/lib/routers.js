@@ -31,4 +31,11 @@ Router.route('/custom', function () {
         data: book
     });
 });
+Router.route('/custom1', function () {
+    var book = Books.findOne();
+    this.render('customForm1', {
+        data: book
+    });
+});
+
 

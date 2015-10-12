@@ -7,12 +7,13 @@ if (Meteor.isClient) {
                     if (err) {
 
                     } else {
-                        var userID = Meteor.user();
+                        var userID = Meteor.userId();
                         var imagesURL = {
                             'profile.image': '/cfs/files/images/' + fileobj._id
-                        }
+                        };
+                        Meteor.users.update(userID, {$set: imagesURL});
                     }
-                    Meteor.users.update(userID, {$set: imagesURL});
+
                 })
             })
         },

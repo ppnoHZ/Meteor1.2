@@ -2,7 +2,14 @@
  * Created by ID on 15/10/12.
  * Author:zhoudd
  * email:zhoudd@stark.tm
+ *
+ *  new FS.Store.FileSystem("images", {path: "~/uploads"})
+ *      path 指的是本地文件的存储路径。
+ *
+ *
+ *
  */
+
 Images = new FS.Collection("images", {
     stores: [new FS.Store.FileSystem("images", {path: "~/uploads"})]
 });

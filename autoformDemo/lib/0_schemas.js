@@ -10,7 +10,7 @@
                     //这里可以做判断，判断语言。
                     return '标题'
                 },
-    2，
+ 2，
  *
  */
 
@@ -48,7 +48,7 @@ Schemas.Books = new SimpleSchema(
             custom: function () {
                 if (Meteor.isClient && this.isSet) {
                     if (this.value == 'zdd') {
-                        Schemas.Books.namedContext("createBooksForm").addInvalidKeys([{name: "title", type: "myErrorType"}]);
+                        Schemas.Books.namedContext("userForm").addInvalidKeys([{name: "title", type: "myErrorType"}]);
                     }
 
                 }
@@ -60,23 +60,22 @@ Schemas.Books = new SimpleSchema(
             custom: function () {
                 if (Meteor.isClient && this.isSet) {
                     if (this.value == 'zdd') {
-                        console.log('重复');
                         //Schemas.Books.namedContext("createBooksForm").addInvalidKeys([{name: "author", type: "myErrorType"}]);
-                        ssContext.addInvalidKeys([{name: "author", type: "myErrorType"}]);
+                        /*  ssContext.addInvalidKeys([{name: "author", type: "myErrorType"}]);
 
 
-                        var ik = ssContext.invalidKeys();
-                        ik = _.map(ik, function (o) {
-                            return _.extend({message: ssContext.keyErrorMessage(o.name)}, o);
-                        });
+                         var ik = ssContext.invalidKeys();
+                         ik = _.map(ik, function (o) {
+                         return _.extend({message: ssContext.keyErrorMessage(o.name)}, o);
+                         });
 
-                        console.log(JSON.stringify(ik));
-                        //判断是指定key是否验证通过
-                        console.log(ssContext.keyIsInvalid('author'));
-                        //获取指定key的错误消息。
-                        console.log(ssContext.keyErrorMessage('author'));
-                        //清除 content对象。所有的错误消息将被清除。
-                        ssContext.resetValidation();
+                         console.log(JSON.stringify(ik));
+                         //判断是指定key是否验证通过
+                         console.log(ssContext.keyIsInvalid('author'));
+                         //获取指定key的错误消息。
+                         console.log(ssContext.keyErrorMessage('author'));
+                         //清除 content对象。所有的错误消息将被清除。
+                         ssContext.resetValidation();*/
 
 
                     }
@@ -180,8 +179,21 @@ Schemas.User = new SimpleSchema({
 
 
 });
+//扩展 合并。
+Schemas.BaseSchema = new SimpleSchema({
+    createAt: {
+        type: Date
+    }
+});
 
-
+Schemas.PageSchema = new SimpleSchema([
+    Schemas.BaseSchema,
+    {
+        title: {
+            type:String
+        }
+    }
+]);
 /*
  * 提示消息的占位符
  [label] will be replaced with the field label

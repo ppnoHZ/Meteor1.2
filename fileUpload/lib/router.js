@@ -14,3 +14,14 @@ Router.route('/',{
         this.render('fileupload');
     }
 });
+Router.route('/imageview',{
+    waitOn: function () {
+        return Meteor.subscribe('images');
+    },
+    action: function () {
+        if (this.ready())
+            this.render('imageView');
+    else
+        this.render('imageView');
+    }
+});

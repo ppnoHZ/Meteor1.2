@@ -14,7 +14,13 @@
 if (Meteor.isClient) {
     Template.fileupload.events({
         'change #file': function (event, template) {
-            FS.Utility.eachFile(event, function (file) {
+            var con = DDP.connect("http://192.168.3.104:3000");
+            con.call('fileUpload', event.target.files[0], function () {
+                console.log(arguments);
+            })
+            //Meteor.call()
+
+            /*FS.Utility.eachFile(event, function (file) {
                 Images.insert(file, function (err, fileobj) {
                     if (err) {
                     } else {
@@ -25,7 +31,7 @@ if (Meteor.isClient) {
                         Meteor.users.update(userID, {$set: imagesURL});
                     }
                 })
-            })
+            })*/
         },
         'click input[type="submit"]': function () {
             //访问选择的图片

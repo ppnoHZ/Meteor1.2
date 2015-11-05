@@ -6,7 +6,8 @@
 
 Meteor.methods({
     quickMethod: function () {
-        console.log('method call with arguments',arguments);
+        console.log('method call with arguments', arguments);
+        return '测试';
         //console.log(JSON.stringify(doc));
         //check(doc,Schemas.Books);
     }

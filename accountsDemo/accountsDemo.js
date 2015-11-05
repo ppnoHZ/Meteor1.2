@@ -10,7 +10,15 @@ if (Meteor.isClient) {
 
     Template.hello.events({
         'click button': function () {
-            alert(Meteor.settings.public.name);
+
+            /*var jwt = require('jwt-simple');
+            var payload = { foo: 'bar' };
+            var secret = 'xxx';
+
+            var token = jwt.encode(payload, secret);
+
+            var decoded = jwt.decode(token, secret);
+            console.log(decoded); //=> { foo: 'bar' }*/
             //退出登陆。
             Meteor.logout(function (error) {
                 if (error)
@@ -22,13 +30,6 @@ if (Meteor.isClient) {
     });
 }
 
-/**
- *
- * @param myParam1
- * @param myParam2
- */
-function loadDocs(myParam1, myParam2) {
-}
 
 if (Meteor.isServer) {
     Meteor.startup(function () {

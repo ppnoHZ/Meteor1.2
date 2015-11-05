@@ -25,3 +25,4 @@ check
 less
 twbs:bootstrap
 iron:router
+kadira:debug

@@ -26,3 +26,19 @@ package
 * cfs._temostore.chunks
 * cfs_gridfs._temostore.files
 * cfs_gridfs._temostore.chunks
+
+
+## [[显示文件]](https://github.com/CollectionFS/Meteor-CollectionFS/wiki/Display-an-Uploaded-Image)
+  uploading 当文件在上传中时可以显示静态图片，{{#if this.isUploaded}}可以判断
+  storing
+  store 填写 FS.Collection 里的stores名称
+  Images = new FS.Collection("images", {
+        stores: [new FS.Store.FileSystem("images", {path: "~/uploads"})]
+  });
+  {{#each images}}
+      <div>
+        <a href="{{this.url}}" target="_blank">
+          <img src="{{this.url store='images' uploading='/images/uploading.gif' storing='/images/storing.gif'}}" alt="" class="thumbnail" />
+        </a>
+      </div>
+    {{/each}}

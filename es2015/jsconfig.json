@@ -1,0 +1,9 @@
+{
+	//vs code es2015 config
+	"compilerOptions": {
+		"target": "ES6",
+		"module": "commonjs",
+		"experimentalDecorators": true
+
+	}
+}

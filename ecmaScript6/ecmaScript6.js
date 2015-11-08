@@ -16,11 +16,18 @@ if (Meteor.isClient) {
             Session.set('counter', Session.get('counter') + 1);
         }
     });
+    // Template.hello.OnRender({
+    //            // code to run on server at startup
+    //     var letConst = new LetConst('let', 'hello ecmascript2015');
+    //     letConst.toString();
+    // });
 }
 
 if (Meteor.isServer) {
     Meteor.startup(function () {
         // code to run on server at startup
+        var letConst = new LetConst('let', 'hello ecmascript2015');
+        letConst.toString();
     });
 }
 class test {
